@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input,span,button{margin: auto 10px;}
+        #outer{margin: 0 auto;text-align: center}
+        input{width: 60px;background-color:#f0f0f0;border: 1px solid #ccc}
+        span{color: #A3C5A8}
+    </style>
+    <script>
+        window.onload=function () {
+            var inputtext=document.getElementsByTagName("input");
+            var span=document.getElementsByTagName("span")[0];
+            var btn=document.getElementsByTagName("button")[0];
+
+            for(var i=0;i<inputtext.length;i++){
+                inputtext[i].onkeyup=function () {
+                    this.value=this.value.replace(/[^(\d)]+/,"");
+                }
+            }
+            btn.onclick=function () {
+                var sum=0;
+                for(var j=0;j<inputtext.length;j++){
+                    if (inputtext[j].value==""){
+                        alert("请输入数字");
+                    }
+                    sum=parseInt(inputtext[j].value)+sum;
+//                    sum+=inputtext[j].value;
+                }
+                span.innerHTML=sum;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <input type="text" value="">+<input type="text">=<span>?</span><button>求和</button>
+</div>
+</body>
+</html>

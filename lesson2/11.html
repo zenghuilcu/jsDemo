@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{background-color: black;}
+        body,div,ul,li{margin:0;padding:0;}
+        #outer{
+            width: 200px;
+            border: 10px solid white;
+            margin: 0 auto;
+            background-color: gray;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        #outer li{
+            width:40px;
+            float:left;
+            overflow:hidden;
+            margin: 5px 5px;
+            cursor:pointer;
+        }
+        #outer li.img{
+            width: 140px;
+            height: 150px;
+            cursor: auto;
+        }
+        #outer img{
+            width: 40px;
+            height: 40px;
+        }
+        #outer li.img img{
+            width: 140px;
+            height: 150px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var imgarr=document.getElementById("outer").getElementsByTagName("img");
+            var img=document.getElementsByClassName("img");
+            console.log(imgarr)
+//            console.log(img)
+            for (var i=1;i<imgarr.length;i++){
+                imgarr[i].index=i;
+                imgarr[i].onmouseover=function () {
+                    currentsrc=imgarr[this.index].src;
+                    imgarr[0].src=currentsrc;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <ul>
+        <li class="img"><img src="images/1.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+        <li><img src="images/4.jpg"></li>
+        <li><img src="images/5.jpg"></li>
+        <li><img src="images/6.jpg"></li>
+        <li><img src="images/7.jpg"></li>
+        <li><img src="images/8.jpg"></li>
+        <li><img src="images/9.jpg"></li>
+        <li><img src="images/10.jpg"></li>
+        <li><img src="images/10.jpg"></li>
+    </ul>
+</div>
+</body>
+</html>

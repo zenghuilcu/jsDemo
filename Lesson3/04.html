@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入两个数字，比较大小</title>
+    <style>
+        input,span,button{margin: auto 10px;}
+        #outer{margin: 0 auto;text-align: center}
+        input{width: 60px;background-color:#f0f0f0;border: 1px solid #ccc}
+        span{color:red}
+    </style>
+    <script>
+        window.onload=function () {
+            var inputtext=document.getElementsByTagName("input");
+            var span=document.getElementsByTagName("span")[0];
+            var btn=document.getElementsByTagName("button")[0];
+
+            for(var i=0;i<inputtext.length;i++){
+                inputtext[i].onkeyup=function () {
+                    this.value=this.value.replace(/[^(\d)]+/,"");
+                }
+            }
+            btn.onclick=function () {
+                var fir1=parseInt(inputtext[0].value);
+                var fir2=parseInt(inputtext[1].value);
+                if (fir1>fir2){
+                    span.innerHTML=fir1;
+                }else {
+                    span.innerHTML=fir2;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <input type="text" value="1">vs<input type="text" value="2"><button>最大的数是>></button><span>?</span>
+</div>
+</body>
+</html>

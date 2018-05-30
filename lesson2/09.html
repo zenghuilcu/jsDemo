@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{font:12px/1.5 Tahoma;}
+        body,div,ul,li{margin:0;padding:0;}
+        #main{
+            width:210px;
+            margin: 0 auto;
+            border: 1px solid gray;
+        }
+        #header{
+            background-color: gray;
+            border:  1px solid white;
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            cursor:pointer;
+        }
+        /*#hiden{*/
+            /*margin: 0 0;*/
+            /*padding: 0 0;*/
+        /*}*/
+        #hiden li{
+            text-align: left;
+            overflow:hidden;
+            vertical-align:top;
+            height: 25px;
+            line-height: 25px;
+        }
+        a{
+            color: gray;
+            background:#e9edf2;
+            padding:0 10px;
+            text-decoration:none;
+            display:block;
+
+        }
+        /*#main a{display:block;color:#6b7980;background:#e9edf2;text-decoration:none;padding:0 10px;}*/
+        #main a:hover { text-decoration:underline; background-color: #fff}
+    </style>
+    <script>
+        window.onload=function () {
+            var header=document.getElementById("header");
+            var hiden=document.getElementById("hiden");
+            header.onclick=function () {
+                hiden.style.display=hiden.style.display=="none"?"block":"none";
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="main">
+    <div id="header">
+        播放列表.....
+    </div>
+    <div id="hiden">
+    <ul>
+        <li><a href="javascript:;">玩家之徒 - 蔡依林</a></li>
+        <li><a href="javascript:;">原谅我就是这样的女生 - 戴佩妮</a></li>
+        <li><a href="javascript:;">猜不透 - 丁当</a></li>
+        <li><a href="javascript:;">自导自演 - 周杰伦</a></li>
+        <li><a href="javascript:;">浪漫窝 - 弦子</a></li>
+        <li><a href="javascript:;">流年 - 王菲</a></li>
+    </ul>
+    </div>
+</div>
+</body>
+</html>

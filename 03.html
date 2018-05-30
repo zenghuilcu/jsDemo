@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传参</title>
+    <style>
+        #maindiv{ margin: 10px auto;text-align: center}
+        #maindiv div{
+            margin: 10px auto;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            var input = document.getElementsByTagName("input");
+//            console.log(input);
+            var btn = document.getElementsByTagName("button")[0];
+            btn.onclick = function () {
+                var a = input[0];
+                var b = input[1];
+                console.log(a,b);
+                alert(a.value);
+                alert(b.value);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="maindiv">
+    <div>
+    <input type="text" value="北京市">
+    </div>
+    <div>
+    <input type="text" value="朝阳区">
+    </div>
+    <div>
+    <button>传参</button>
+    </div>
+</div>
+
+</body>
+</html>

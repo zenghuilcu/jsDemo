@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提示框</title>
+    <style>
+        body,input,p{margin:0;padding:0;}
+        body{font:12px/1.5 Tahoma;}
+        #div{width:200px;margin:10px auto;}
+        input{margin-right:5px;vertical-align:middle;}
+        #hiden{padding:5px;margin-top:5px;background:#ffefa4;border:1px solid #f90;display:none;}
+    </style>
+    <script>
+        window.onload=function () {
+            var p=document.getElementsByTagName("p")[0];
+            var hiden=document.getElementById("hiden");
+            p.onmouseover=function () {
+                hiden.style.display="block";
+                console.log("11")
+            }
+            p.onmouseout=function () {
+                hiden.style.display="none";
+                console.log("22")
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="div">
+    <p>
+    <input type="checkbox">
+    显示的信息
+    </p>
+
+<div id="hiden">提示信息</div>
+</div>
+</body>
+</html>

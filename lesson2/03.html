@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{font:12px/1.5 Tahoma;
+        }
+        #outer{
+            width: 500px;
+            margin: 0 auto;
+            text-align: left;
+
+        }
+        #outer p{
+            text-align: left;
+        }
+        span{
+            color: dimgrey;
+            margin: 0 10px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var numarr=document.getElementById("outer").getElementsByTagName("input")[0].value.split(",");
+            var oBtn = document.getElementsByTagName("button")[0];
+
+
+            console.log(numarr)
+            oBtn.onclick=function(){
+                var sum=0;
+                for (var i in numarr){
+                    sum=sum+parseInt(numarr[i]);
+                    alert(sum)
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <label><input type="text" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" /><span>输入数字求和，数字之间用半角","号分隔</span></label>
+    <p><button>求和</button></p>
+    <strong class="sum"></strong>
+</div>
+</body>
+</html>

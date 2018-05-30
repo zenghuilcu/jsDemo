@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{text-align:center;font:700 30px/1.5 arial;}
+</style>
+<script>
+    window.onload=function () {
+        var oBody=document.body;
+        var i=0;
+        setInterval(updatetime,1000);
+//        updatetime();
+        function updatetime() {
+            oBody.innerHTML=++i;
+        }
+    }
+</script>
+<body>
+
+</body>
+</html>

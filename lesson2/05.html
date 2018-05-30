@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传参改属性</title>
+    <style>
+        body{font:12px/1.5 Tahoma;}
+        #outer{
+            text-align: center;
+            margin: 0 auto;
+            width: 300px;
+        }
+        #inner{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function Changediv(elem,zeng,value) {
+            this.zeng=zeng.value;
+            this.value=value.value;
+            elem.style[this.zeng]=this.value;
+        }
+        window.onload=function () {
+            var btn=document.getElementById("outer").getElementsByTagName("button");
+            var inp=document.getElementById("outer").getElementsByTagName("input");
+            var changed=document.getElementById("inner");
+//            console.log(btn);
+//            console.log(inp);
+//            console.log(changed);
+            btn[0].onclick=function () {
+                Changediv(changed,inp[0],inp[1]);
+            }
+            btn[1].onclick=function () {
+                changed.style.cssText = "";
+            }
+//            for(var i=0;i<btn.length;i++){
+//                btn[i].onclick=function () {
+//                    btn[i].index = i;
+//                    this.index == btn.length - 1 && (changed.style.cssText = "");
+////                    Changediv(changed,inp[0],inp[1])
+////                }
+//
+//            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <p>
+        属性名：<input type="text" value="background">
+    </p>
+    <p>
+        属性值：<input type="text" value="blue">
+    </p>
+    <p>
+        <button>确定</button>
+        <button>重置</button>
+    </p>
+    <div id="inner">
+
+    </div>
+</div>
+</body>
+</html>

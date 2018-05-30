@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入法</title>
+    <style>
+        body,ul,li{margin:0;padding:0;}
+        html,body{height:100%;}
+        body{font:12px/1.5 Tahoma;
+        }
+        #outer{
+            text-align: left;
+            width: 100px;
+            margin: 10px auto;
+            CURSOR: crosshair;
+        }
+        #outer ul{
+            border:1px solid blue;
+            width: 80px;
+            margin: 10px 0;
+            display: block;
+            color: blue;
+        }
+        li{
+            list-style-type: none;
+            margin: 0 auto;
+            padding: 0 5px;
+            line-height: 25px;
+            background: white;
+        }
+        .last{
+            border-top:1px solid blue;
+        }
+        button{
+            border: 1px solid blue ;
+            CURSOR: crosshair;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var i=0;
+            var btn=document.getElementsByTagName("button")[0];
+            var ul=document.getElementsByTagName("ul")[0];
+            var li=document.getElementsByTagName("li");
+            for (var j=0;j<li.length;j++){
+                li[j].onmouseover=function () {
+                    console.log("li[j]");
+                    li[j].style.background="red";
+                }
+                li[j].onmouseout=function () {
+                    li[j].style.background="white";
+                }
+            }
+            btn.onclick=function () {
+                if (i==0){
+                    ul.style.display="block";
+                    i=i+1;
+                }else{
+                    ul.style.display="none";
+                    i=i-1;
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <button>输入法</button>
+        <ul>
+            <li>手写</li>
+            <li>拼音</li>
+            <li class="last">关闭</li>
+        </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS年历</title>
+    <style>
+        body{font:12px/1.5 Tahoma;}
+        #outer{
+            width: 248px;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 2px solid gray;
+        }
+        #outer li{
+            float:left;
+            cursor:pointer;
+            overflow:hidden;
+            width: 40px ;
+            margin: 10px 10px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: normal;
+            border: 1px solid black;
+        }
+        #outer li.current{
+            color: red !important;
+            background-color: white!important;
+        }
+        ul{
+            margin:0 0;
+            padding: 0 0;
+        }
+        #footer{
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+            window.onload=function () {
+                var arrli=document.getElementById("outer").getElementsByTagName("li");
+                var footer=document.getElementById("footer");
+                var fotinner=["元旦：1月1日至3日放假三天。",
+                    "春节：2月2日至8日放假7天。",
+                    "妇女节：3月8日妇女节，与我无关。",
+                    "清明节：4月3日至5日放假3天",
+                    "劳动节：4月30日至5月2日放假3天。",
+                    "端午节：6月4日至6日放假3天。",
+                    "小暑：7月7日小暑。不放假。",
+                    "七夕节：8月6日七夕节。不放假。",
+                    "中秋节：9月10日至12日放假3天。",
+                    "国庆节：10月1日至7日放假7天。",
+                    "立冬：11月8日立冬。不放假。",
+                    "艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+                ]
+                for(var i=0;i<arrli.length;i++){
+                    arrli[i].index=i;
+                    arrli[i].onmouseover=function () {
+                        for(var p in arrli){arrli[p].className=""}
+                        arrli[this.index].className="current";
+                        footer.innerHTML=fotinner[this.index];
+                    }
+                }
+            }
+    </script>
+</head>
+<body>
+<div id="outer">
+<ul>
+    <li class="current"><p><strong>1</strong></p>JAN</li>
+    <li><p><strong>2</strong></p>FER</li>
+    <li><p><strong>3</strong></p>MAR</li>
+    <li><p><strong>4</strong></p>APR</li>
+    <li><p><strong>5</strong></p>MAY</li>
+    <li><p><strong>6</strong></p>JUN</li>
+    <li><p><strong>7</strong></p>JUL</li>
+    <li><p><strong>8</strong></p>AUG</li>
+    <li><p><strong>9</strong></p>SEP</li>
+    <li><p><strong>10</strong></p>OCT</li>
+    <li><p><strong>11</strong></p>NOV</li>
+    <li><p><strong>12</strong></p>DEC</li>
+</ul>
+<div id="footer">
+    <b>6月节日</b>
+    <p>元旦：1月1日至3日放假三天。</p>
+</div>
+</div>
+</body>
+</html>

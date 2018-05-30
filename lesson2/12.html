@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox</title>
+    <style>
+        #outer{
+            margin: 0 auto;
+        }
+        #inner{
+            width: 150px;
+            border: 1px solid black;
+            border-radius:5px;
+            margin: 0 auto;
+        }
+        #outer .foot{text-align: center}
+        .top{border-bottom: 1px solid black;margin: 0 10px;height: 40px;line-height: 40px}
+        a{text-decoration:none;}
+    </style>
+    <script>
+        window.onload=function () {
+            var checkarr = document.getElementById("inner").getElementsByTagName("input");
+            var fanxuan = document.getElementsByTagName("a")[0];
+            var span = document.getElementsByTagName("span")[0];
+            checkarr[0].onclick = function () {
+                if (checkarr[0].checked == true) {
+                    for (var i = 1; i < checkarr.length; i++) {
+                    checkarr[i].checked = true;
+                    span.innerHTML = "全不选";
+                    }
+                }
+                else {
+                    for (var i = 1; i < checkarr.length; i++) {
+                    checkarr[i].checked = false;
+                    span.innerHTML = "全选";
+                    }
+                }
+            }
+            fanxuan.onclick=function () {
+                for (var i = 1; i < checkarr.length; i++) {
+                    checkarr[i].checked = checkarr[i].checked==true?false:true;
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <p class="top"><input type="checkbox"><span>全选</span> <a href="javascript:;">反选</a></p>
+        <p><input type="checkbox">选项(一)</p>
+        <p><input type="checkbox">选项(二)</p>
+        <p><input type="checkbox">选项(三)</p>
+        <p><input type="checkbox">选项(四)</p>
+        <p><input type="checkbox">选项(五)</p>
+        <p><input type="checkbox">选项(六)</p>
+        <p><input type="checkbox">选项(七)</p>
+        <p><input type="checkbox">选项(八)</p>
+        <p><input type="checkbox">选项(九)</p>
+        <p><input type="checkbox">选项(十)</p>
+    </div>
+    <p class="foot">1、切换全选/全不选文字；2、根据选中个数更新全选框状态；</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变色</title>
+    <style>
+        #first{
+            text-align: center;
+            margin: 10px auto;
+        }
+        #seconder{width:330px;height:100px;margin:10px auto;}
+        #seconder div{float:left;width:100px;height:100px;margin:0 5px;background:black;}
+    </style>
+    <script>
+        window.onload =function () {
+            var btn=document.getElementsByTagName("button")[0];
+            var insidediv=document.getElementById("seconder").getElementsByTagName("div");
+            btn.onclick=function () {
+                for (var i=0;i<insidediv.length;i++){
+                    insidediv[i].style.background="red" ;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="first">
+    <button>点击将DIV变成红色</button>
+</div>
+<div id="seconder">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>
